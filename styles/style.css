@@ -1,0 +1,439 @@
+/* 1. CONFIGURACIÓN BASE (El truco del 62.5%) */
+html {
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- BOTÓN DEL CARRITO --- */
+#carritoCompra button {
+    background-color: transparent;
+    width: 6rem;
+    height: 6rem;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 100;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+#carritoCompra img {
+    width: 80%;
+}
+
+.cantidad {
+    z-index: 1001;
+    background-color: red;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 0.3rem;
+    right: 4.5rem;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#carritoCompra button:hover {
+    background-color: rgba(255, 255, 255, 0.866);
+}
+
+/* --- BARRA SUPERIOR --- */
+
+header {
+    width: 100%;
+    height: auto;
+}
+
+.ContenedorNavegacion {
+    background-color: #074796;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0rem 0.5rem 0rem;
+}
+
+.contenedorImagen {
+    width: 100%;
+    max-width: 15rem;
+    height: auto;
+
+}
+
+.contenedorImagen img {
+    width: 100%;
+    height: auto;
+}
+
+.barraBusqueda {
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.buscar {
+    width: 100%;
+    max-width: 30rem;
+    padding: 0.2rem 1rem;
+    border-radius: 0.7rem;
+}
+
+.botonBuscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: #044089;
+}
+
+.textoBuscar {
+    display: none;
+}
+
+.lupa {
+    width: 2.5rem;
+    height: auto;
+}
+
+/* --- ESTILOS PARA MÓVIL (Por defecto) --- */
+
+.pestaniasBusquedas {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hamburger-btn {
+    font-size: 2.4rem;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hamburger-btn p {
+    font-size: 2rem;
+}
+
+.nav-menu {
+    width: 100%;
+    background-color: #074796;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.nav-menu.is-open {
+    max-height: 300px;
+}
+
+.menu-item {
+    padding: 1.5rem;
+    background: transparent;
+    border: none;
+    border-top: 0.1rem solid #9f9d9d8b;
+    text-align: left;
+}
+
+/* --- CAJA DE ARTUCULOS --- */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.contenedoPrincipal {
+    width: 100%;
+    max-width: 110rem;
+    min-height: 100vh;
+    border: 0.1rem black solid;
+}
+
+.contenedorNovedades {
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    /* Pone los contenedores uno al lado del otro */
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.contenedorProdcutos {
+    height: auto;
+    width: 100%;
+    padding: 5rem 0rem;
+    background-color: rgb(249, 249, 249);
+}
+
+.ContenedorConsolas {
+    width: auto;
+    height: auto;
+}
+
+.tituloConsolas {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#articulosConsolas {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem; 
+    gap: 1rem;
+}
+
+.articuloConsolas {
+    flex: 0 0 100%;
+    height: 32rem;
+    max-width: 15rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 0.7rem;
+    gap: 1.5rem;
+    background-color: white;
+}
+
+.cajaImagen {
+    height: 13rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenPortada {
+    width: 100%;
+    height: auto;
+}
+
+.cajaTitulo {
+    height: 10rem;
+    text-align: center;
+}
+
+.articuloConsolas .titulo {
+    font-size: 1.5rem;
+}
+
+.precio {
+    font-size: 2rem;
+}
+
+.cajaDescripcion {
+    height: 5rem;
+    display: none;
+}
+
+.descripcionArticulo {
+    font-size: 1.2rem;
+}
+
+.botonAgregar {
+    padding: 0rem 1.5rem;
+    height: 4rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    background-color: rgb(4, 15, 141);
+    color: white;
+    border: 0.1rem solid black;
+}
+
+.botonAgregar:hover {
+    background-color: rgb(4, 20, 200);
+}
+
+.botonAgregar:active {
+    background-color: rgb(9, 29, 250);
+}
+
+/*  ---PARTE INFERIOR DE LA PAGINA, (Foteer) */
+
+footer {
+    background-color: rgb(56, 56, 56);
+    position: relative;
+    height: 50rem;
+    bottom: 0rem;
+}
+
+/* --- VENTANA DEL CARRITO (ARREGLADA) --- */
+#ventanaCarrito {
+    background-color: rgb(4, 15, 141);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 40rem;
+    height: 100vh;
+    z-index: 3200;
+    padding: 1rem;
+}
+
+.interiorVentanaCarrito {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.interiorVentanaCarrito h2 {
+    padding: 1rem;
+    font-size: 3.5rem;
+    border-bottom: 0.2rem solid black;
+    text-align: center;
+}
+
+.comprasUsuario {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1rem;
+    gap: 1;
+}
+
+.cajaCarrito {
+    padding: 1rem;
+    border: 0.1rem solid black;
+    width: 100%;
+    gap: 0.2rem;
+    border-radius: 1.5rem;
+}
+
+.contenidoCaja {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.contenidoCaja img {
+    width: 25%;
+    height: auto;
+}
+
+.DescripcionCarrito {
+    font-size: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.DescripcionCarrito button {
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    background: transparent;
+}
+
+.DescripcionCarrito button:hover {
+    background-color: red;
+    color: white;
+}
+
+.sumatoria {
+    border-top: 0.2rem solid black;
+    font-size: 2.5rem;
+    width: 100%;
+    padding: 1rem 1.2rem;
+}
+
+/* --- SECCIÓN DE BOTONES --- */
+.botonesCompra {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.botonesCompra button {
+    flex: 1;
+    height: 5rem;
+    color: rgb(0, 3, 177);
+    background-color: white;
+    border: 0.1rem solid rgb(0, 3, 177);
+    border-radius: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- CLASES DE ESTADO (Activo/Desactivo) --- */
+/* He ajustado los valores para que el movimiento sea de derecha a izquierda */
+.activo {
+    right: 0 !important;
+    transition: right 0.5s ease;
+}
+
+.desactivo {
+    right: -100% !important;
+    /* Se esconde fuera de la pantalla a la derecha */
+    transition: right 0.5s ease;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .Busqueda {
+        flex-direction: column;
+    }
+
+    .imagenLogo {
+        height: 6rem;
+        margin-bottom: 1rem;
+    }
+
+    form {
+        margin-bottom: 1rem;
+        max-width: 90%;
+    }
+
+    .articulo {
+        max-width: 90%;
+    }
+
+    #ventanaCarrito {
+        max-width: 100%;
+        /* Pantalla completa en móvil */
+        padding: 0.5rem;
+    }
+}

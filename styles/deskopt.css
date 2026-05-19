@@ -1,0 +1,21 @@
+.ContenedorNavegacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3rem;
+    padding: 2rem 5rem;
+}
+
+.hamburger-btn {
+    display: none;
+    /* Escondemos el botón hamburguesa */
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    /* Botones uno al lado del otro */
+    max-height: none;
+    /* No se colapsa en escritorio */
+    overflow: visible;
+}

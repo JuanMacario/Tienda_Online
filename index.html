@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de Compras</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link media="screen and (min-width: 600px)" rel="stylesheet" href="./styles/deskopt.css">
+    <meta>
+</head>
+
+<body>
+    <section id="carritoCompra">
+        <button title="Mis Compras" value="visualizarcarrito(carrito)">
+            <img src="./images/3144456.png" alt="carritodeCompra" class="imagenCarro">
+        </button>
+        <div id="numero">
+            <p class="cantidad">0</p>
+        </div>
+    </section>
+
+    <header>
+        <nav class="ContenedorNavegacion">
+            <div class="contenedorImagen">
+                <img src="./images/logoTienda.png" alt="">
+            </div>
+
+            <section class="barraBusqueda">
+                <input type="search" placeholder="Buscar en la tienda" class="buscar">
+                <button class="botonBuscar">
+                    <p class="textoBuscar">Buscar</p>
+                    <img src="./images/magnifying-glass-solid-full.svg" class="lupa">
+                </button>
+            </section>
+
+            <section class="pestaniasBusquedas">
+                <button id="menu-toggle" class="hamburger-btn">
+                    <p>Menu</p><span>☰</span>
+                </button>
+            </section>
+            <div id="menu-responsive" class="nav-menu">
+                <button class="menu-item" data-categoria="todos">Todos los productos</button>
+                <button class="menu-item" data-categoria="consolas">Consolas</button>
+                <button class="menu-item" data-categoria="juegos">Juegos</button>
+                <button class="menu-item" data-categoria="controles">Controles</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contenedoPrincipal">
+
+            <section class="contendorNovedades">
+
+                <div class="carousel-container">
+
+                    <div class="carousel-track">
+                        <section class="carousel-item">
+                            <h2>Pikachu</h2>
+                            <img src="#" alt="Pikachu">
+                            <p>Tipo: Eléctrico</p>
+                            <button>Ver detalles</button>
+                        </section>
+
+                        <section class="carousel-item">
+                            <h2>Charmander</h2>
+                            <img src="#" alt="Charmander">
+                            <p>Tipo: Fuego</p>
+                            <button>Ver detalles</button>
+                        </section>
+
+                    </div>
+
+                    <button class="btn-prev">❮</button>
+                    <button class="btn-next">❯</button>
+                </div>
+            </section>
+
+            <section class="contenedorProdcutos">
+                <div class="ContenedorConsolas">
+                    <h2 class="tituloConsolas">Consolas</h2>
+                    <div id="articulosConsolas">
+                        <!-- Aqui estaran los articulos que son las consolas -->
+                    </div>
+                </div>
+                <div class="ContenedorJuegos">
+                    <h2 class="tituloJuegos">Juegos</h2>
+                    <div id="articulosJuegos">
+                        <!-- Aqui estaran los articulos que son los Juegos -->
+                    </div>
+                </div>
+                <div class="ContenedorControles">
+                    <h2 class="tituloControles">Controles</h2>
+                    <div class="articulosControles">
+                        <!-- Aqui estaran los artivulos que son los Controles -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="contenedorMarcas">
+                <h2>Marcas de nuestros Productos</h2>
+                <div class="contenedorNintendo">
+                    <h2>Nintendo</h2>
+                </div>
+                <div class="contenedorPlayStation">
+                    <h2>Playstation</h2>
+                </div>
+                <div class="contenendorXbox">
+                    <h2>Xbox</h2>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div id="ventanaCarrito" class="desactivo">
+        <div class="interiorVentanaCarrito">
+            <h2>Mi Carrito</h2>
+
+            <section id="misCompras" class="comprasUsuario">
+
+            </section>
+            <section class="sumatoria" id="seccionTotal">
+                <p>Total a pagar: Q. 0.00</p>
+            </section>
+            <section class="botonesCompra">
+                <button>Finalizar compra</button>
+                <button id="cerrarCarrito">Continuar Comprando</button>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
+
+<!-- <img src="./images/juegos/Zelda_Breath_Of_The_Wild.jpg" alt="">   -->
