@@ -2,7 +2,9 @@ import { productos } from "./images/productos.js"; //para importar el array de l
 import { carrito } from "./images/productos.js";
 
 const botones = document.getElementById("menu-responsive") //para ver la accion que se realizen en los botones de navegacion en la parte superior
-const cajasArticulos = document.getElementById("articulosConsolas")
+const articulosConsolas = document.getElementById("articulosConsolas")
+const articulosJuegos = document.getElementById("articulosJuegos")
+const articuloControles = document.getElementById("articulosControles")
 const numeroCarrito = document.getElementById("numero")
 const visualizarCarrito = document.getElementById("carritoCompra")
 const verCarrito = document.getElementById('ventanaCarrito')
@@ -14,18 +16,16 @@ const menuResponsive = document.getElementById('menu-responsive');
 
 let contador = 0
 
-dibujarArticulos(productos, "consolas")
+//Funciones
 
-function dibujarArticulos(productos, articulo) {
+function dibujarArticulos(productos, articulo) { //para dibujar las cajar en cada seccion
     let moldeHTML = ``;
 
-    let articuloFiltrar = articulo === 'todos'
-        ? productos
-        : productos.filter((producto) => producto.categoria == articulo);
+    let articuloFiltrar = productos.filter((producto) => producto.categoria == articulo);
 
     for (let elemento of articuloFiltrar) {
         moldeHTML += `
-         <article class="articuloConsolas">
+         <article class="articulo">
             <div class="cajaImagen">
                 <img src="${elemento.img}" class="imagenPortada">
             </div>
@@ -41,9 +41,8 @@ function dibujarArticulos(productos, articulo) {
       `;
     }
 
-    cajasArticulos.innerHTML = moldeHTML;
+    return moldeHTML;
 }
-
 
 function agregarCarrito(idArticulo, listaProductos) {
     let stringId = idArticulo.toString()
@@ -170,6 +169,11 @@ function sumaTotal(carrito) {
 
     sumaPrecios.innerHTML += modelo
 }
+
+//Aqui se comienzan las acciones de dibujar cajar e interaccion de la pagina principal
+
+articulosConsolas.innerHTML = dibujarArticulos(productos, "consolas")
+articulosJuegos.innerHTML = dibujarArticulos(productos, "juegos")
 
 botones.addEventListener("click", (e) => { //esto es para que cuando se haga clic en uno de los botones de navegacion se pueda validar que boton se toco
 
