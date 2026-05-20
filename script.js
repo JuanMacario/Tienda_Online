@@ -3,6 +3,8 @@ import { carrito } from "./images/productos.js";
 
 const botones = document.getElementById("menu-responsive") //para ver la accion que se realizen en los botones de navegacion en la parte superior
 const articulosConsolas = document.getElementById("articulosConsolas")
+const articulosJuegos = document.getElementById("articulosJuegos")
+const articuloControles = document.getElementById("articulosControles")
 const numeroCarrito = document.getElementById("numero")
 const visualizarCarrito = document.getElementById("carritoCompra")
 const verCarrito = document.getElementById('ventanaCarrito')
@@ -23,7 +25,7 @@ function dibujarArticulos(productos, articulo) { //para dibujar las cajar en cad
 
     for (let elemento of articuloFiltrar) {
         moldeHTML += `
-         <article class="articuloConsolas">
+         <article class="articulo">
             <div class="cajaImagen">
                 <img src="${elemento.img}" class="imagenPortada">
             </div>
@@ -41,7 +43,6 @@ function dibujarArticulos(productos, articulo) { //para dibujar las cajar en cad
 
     return moldeHTML;
 }
-
 
 function agregarCarrito(idArticulo, listaProductos) {
     let stringId = idArticulo.toString()
@@ -170,6 +171,9 @@ function sumaTotal(carrito) {
 }
 
 //Aqui se comienzan las acciones de dibujar cajar e interaccion de la pagina principal
+
+articulosConsolas.innerHTML = dibujarArticulos(productos, "consolas")
+articulosJuegos.innerHTML = dibujarArticulos(productos, "juegos")
 
 botones.addEventListener("click", (e) => { //esto es para que cuando se haga clic en uno de los botones de navegacion se pueda validar que boton se toco
 
